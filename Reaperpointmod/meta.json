@@ -1,0 +1,24 @@
+{
+  "ID": "com.example.reaperpointmod",
+  "AssemblyName": "Reaperpointmod.dll",
+  "Author": [
+    {
+      "Key": "English",
+      "Value": "ClanFoxReaper"
+    }
+  ],
+  "Version": "1.0",
+  "Name": [
+    {
+      "Key": "English",
+      "Value": "Reaper point mod"
+    }
+  ],
+  "Description": [
+    {
+      "Key": "English",
+      "Value": "All the mods created by me."
+    }
+  ],
+  "Dependencies": []
+}
