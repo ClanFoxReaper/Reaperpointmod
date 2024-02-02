@@ -79,7 +79,7 @@ namespace Reaperpointmod
             Gorgon.APToUsePerc = ReaperWeaponConfig.GorgonEyeAActionPointToUsePerc;
             Gorgon.DamagePayload.DamageKeywords[0].Value = ReaperWeaponConfig.GorGonEyeADamage;
 
-            WeaponDef Destiny = ReaperpointmodWeapon.Repo.GetAllDefs<WeaponDef>().FirstOrDefault(a => a.name.Equals("PX_LaserArrayPack_WeaponDef}"));
+            WeaponDef Destiny = ReaperpointmodWeapon.Repo.GetAllDefs<WeaponDef>().FirstOrDefault(a => a.name.Equals("PX_LaserArrayPack_WeaponDef"));
             Destiny.APToUsePerc = ReaperWeaponConfig.DestinyActionPointToUsePerc;
             Destiny.DamagePayload.DamageKeywords[0].Value = ReaperWeaponConfig.DestinyDamage;
 
