@@ -27,7 +27,7 @@ namespace Reaperpointmod
             GeoVehicleWeaponDamageDef ThunderboltRegular = FireFoxAirWolf.Repo.GetAllDefs<GeoVehicleWeaponDamageDef>().FirstOrDefault(gvs => gvs.name.Equals("Regular_GeoVehicleWeaponDamageDef"));
             GeoVehicleWeaponDamageDef ThunderboltShred = FireFoxAirWolf.Repo.GetAllDefs<GeoVehicleWeaponDamageDef>().FirstOrDefault(gvs => gvs.name.Equals("Shred_GeoVehicleWeaponDamageDef"));
             GeoVehicleWeaponDamageDef FenrirRegular = FireFoxAirWolf.Repo.GetAllDefs<GeoVehicleWeaponDamageDef>().FirstOrDefault(gvs => gvs.name.Equals("Regular_GeoVehicleWeaponDamageDef"));
-            GeoVehicleWeaponDamageDef FenrirVirophage = FireFoxAirWolf.Repo.GetAllDefs<GeoVehicleWeaponDamageDef>().FirstOrDefault(gvs => gvs.name.Equals("Virophage_GeoVehicleWeaponDamageDef\""));
+            GeoVehicleWeaponDamageDef FenrirVirophage = FireFoxAirWolf.Repo.GetAllDefs<GeoVehicleWeaponDamageDef>().FirstOrDefault(gvs => gvs.name.Equals("Virophage_GeoVehicleWeaponDamageDef"));
             GeoVehicleWeaponDamageDef BrokkrRegular = FireFoxAirWolf.Repo.GetAllDefs<GeoVehicleWeaponDamageDef>().FirstOrDefault(gvs => gvs.name.Equals("Regular_GeoVehicleWeaponDamageDef"));
             
             GeoVehicleWeaponDef Nomad = FireFoxAirWolf.Repo.GetAllDefs<GeoVehicleWeaponDef>().FirstOrDefault(a => a.name.Equals("PX_BasicMissileNomadAAM_VehicleWeaponDef"));
