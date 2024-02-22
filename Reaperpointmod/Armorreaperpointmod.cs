@@ -73,12 +73,12 @@ namespace Reaperpointmod
             GoldenHelmetForMagnus.BodyPartAspectDef.Stealth = ArmorReaperConfig.GoldenHelmetAssaultForMagnusStealth;
             GoldenHelmetForMagnus.BodyPartAspectDef.Accuracy = ArmorReaperConfig.GoldenHelmetAssaultForMagnusAccuracy;
 
-            TacticalItemDef GoldenTorsoForMagnus = Armorreaperpointmod.Repo.GetAllDefs<TacticalItemDef>().FirstOrDefault(a => a.name.Equals("PX_Assault_Legs_Gold_ItemDef"));
+            TacticalItemDef GoldenTorsoForMagnus = Armorreaperpointmod.Repo.GetAllDefs<TacticalItemDef>().FirstOrDefault(a => a.name.Equals("PX_Assault_Torso_Gold_BodyPartDef"));
             GoldenTorsoForMagnus.BodyPartAspectDef.Perception = ArmorReaperConfig.GoldenTorsoAssaultForMagnusPerception;
             GoldenTorsoForMagnus.BodyPartAspectDef.Stealth = ArmorReaperConfig.GoldenTorsoAssaultForMagnusStealth;
             GoldenTorsoForMagnus.BodyPartAspectDef.Accuracy = ArmorReaperConfig.GoldenTorsoAssaultForMagnusAccuracy;
 
-            TacticalItemDef GoldenLegsForMagnus = Armorreaperpointmod.Repo.GetAllDefs<TacticalItemDef>().FirstOrDefault(a => a.name.Equals("PX_Assault_Torso_Gold_BodyPartDef"));
+            TacticalItemDef GoldenLegsForMagnus = Armorreaperpointmod.Repo.GetAllDefs<TacticalItemDef>().FirstOrDefault(a => a.name.Equals("PX_Assault_Legs_Gold_ItemDef"));
             GoldenLegsForMagnus.BodyPartAspectDef.Speed = ArmorReaperConfig.GoldenLegsArmorAssaultForMagnusSpeed;
             GoldenLegsForMagnus.BodyPartAspectDef.Perception = ArmorReaperConfig.GoldenLegsArmorAssaultForMagnusPerception;
             GoldenLegsForMagnus.BodyPartAspectDef.Stealth = ArmorReaperConfig.GoldenLegsArmorAssaultForMagnusStealth;
