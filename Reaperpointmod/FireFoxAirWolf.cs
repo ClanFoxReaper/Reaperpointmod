@@ -1,12 +1,6 @@
-﻿using Base.Core;
-using Base.Defs;
-using Base.Levels;
-using PhoenixPoint.Common.Game;
-using PhoenixPoint.Modding;
-using PhoenixPoint.Geoscape.Core;
+﻿using Base.Defs;
 using PhoenixPoint.Geoscape.Entities.Interception.Equipments;
 using System.Linq;
-using UnityEngine;
 using PhoenixPoint.Geoscape.Entities;
 
 namespace Reaperpointmod

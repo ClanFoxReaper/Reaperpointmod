@@ -610,6 +610,9 @@ namespace Reaperpointmod
         [ConfigField("Sentient AIs", "Research point output is increased by 25%.")]
         public float SentientAIsAmount = 0.5f;
 
+        [ConfigField("Moon mission preparation", "All aircraft speed is increased by 25%.")]
+        public float MMPAirBuffSpeed = 0.25f;
+
         [ConfigField("Gemini V", "Phoenix Scarab Missile Turret")]
         public int GeminiActionPointToUsePerc = 75;
         public int GeminiChargesMaxAmmo = 8;

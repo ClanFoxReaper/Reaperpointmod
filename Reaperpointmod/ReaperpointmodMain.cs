@@ -6,6 +6,9 @@ using PhoenixPoint.Common.Core;
 using PhoenixPoint.Modding;
 using System.Linq;
 using UnityEngine;
+using PhoenixPoint.Geoscape.Events.Eventus;
+using PhoenixPoint.Geoscape.Events;
+using PhoenixPoint.Geoscape.Levels;
 
 
 namespace Reaperpointmod
@@ -48,9 +51,10 @@ namespace Reaperpointmod
 			GameObject go = ModGO;
 			/// PhoenixGame is accessible at any time.
 			PhoenixGame game = GetGame();
-			
-			Logger.LogInfo("Mod Enable");
+            
+            Logger.LogInfo("Mod Enable");
             this.OnConfigChanged();
+
 
             /// Apply any general game modifications.
         }
@@ -60,9 +64,9 @@ namespace Reaperpointmod
 		/// Guaranteed to have OnModEnabled before.
 		/// </summary>
 		public override void OnModDisabled() {
-			/// Undo any game modifications if possible. Else "CanSafelyDisable" must be set to false.
-			/// ModGO will be destroyed after OnModDisabled.
-			Main = null;
+            /// Undo any game modifications if possible. Else "CanSafelyDisable" must be set to false.
+            /// ModGO will be destroyed after OnModDisabled.
+            ReaperpointmodMain.Main = null;
 			Logger.LogInfo("Mod Disable");
 		}
 
@@ -70,12 +74,13 @@ namespace Reaperpointmod
 		/// Callback for when any property from mod's config is changed.
 		/// </summary>
 		public override void OnConfigChanged() {
-            /// Config is accessible at any time.
-            Armorreaperpointmod.ArmorReaper();
+			/// Config is accessible at any time.
+			Logger.LogInfo("Config Change!!!");
+            Armorreaperpointmod.ChangeArmor();
             ReaperpointmodWeapon.ReaperWeapon();
             FireFoxAirWolf.FireFoxAirWolfReaper();
             ReaperpointmodResearch.ReaperResearch();
-            Vehiclereaperpointmod.VehicleReaper();
+            Vehiclereaperpointmod.ChangeVehicle();
             Facilityreaperpointmod.FacilityReaper();
             ReaperpointmodSquad.ReaperSquad();
             ReaperpointmodMissionReward.ReaperMissionReward();

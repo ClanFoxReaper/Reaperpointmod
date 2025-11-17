@@ -1,8 +1,18 @@
+using Base.Core;
+using Base.Defs;
 using Base.Serialization.General;
+using Base.Utils.ReportIssueGui;
+using PhoenixPoint.Common.Core;
+using PhoenixPoint.Common.Entities;
 using PhoenixPoint.Geoscape.Entities;
+using PhoenixPoint.Geoscape.Events;
+using PhoenixPoint.Geoscape.Events.Eventus;
 using PhoenixPoint.Geoscape.Levels;
+using PhoenixPoint.Geoscape.Levels.Factions;
+using PhoenixPoint.Geoscape.View.ViewControllers.Modal;
 using PhoenixPoint.Modding;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Reaperpointmod
 {
@@ -29,7 +39,10 @@ namespace Reaperpointmod
 			GeoLevelController gsController = Controller;
 			/// ModMain is accesible at any time
 			ReaperpointmodMain main = (ReaperpointmodMain)Main;
-		}
+
+
+
+        }
 		/// <summary>
 		/// Called when Geoscape ends.
 		/// </summary>

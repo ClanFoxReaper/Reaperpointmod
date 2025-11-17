@@ -1,0 +1,7 @@
+C:\Users\Constantin\Documents\Phoenix Point SDK\Reaperpointmod\Dist\meta.json
+C:\Users\Constantin\Documents\Phoenix Point SDK\Reaperpointmod\Dist\Reaperpointmod.dll
+C:\Users\Constantin\Documents\Phoenix Point SDK\Reaperpointmod\Dist\Reaperpointmod.pdb
+C:\Users\Constantin\Documents\Phoenix Point SDK\Reaperpointmod\Reaperpointmod\obj\Debug\Reaperpointmod.csproj.AssemblyReference.cache
+C:\Users\Constantin\Documents\Phoenix Point SDK\Reaperpointmod\Reaperpointmod\obj\Debug\Reaperpointmod.csproj.CoreCompileInputs.cache
+C:\Users\Constantin\Documents\Phoenix Point SDK\Reaperpointmod\Reaperpointmod\obj\Debug\Reaperpointmod.dll
+C:\Users\Constantin\Documents\Phoenix Point SDK\Reaperpointmod\Reaperpointmod\obj\Debug\Reaperpointmod.pdb

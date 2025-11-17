@@ -1,14 +1,10 @@
-﻿using Base.Core;
-using Base.Defs;
-using Base.Levels;
-using HarmonyLib;
-using PhoenixPoint.Common.Game;
-using PhoenixPoint.Modding;
-using PhoenixPoint.Tactical.Entities.Abilities;
+﻿using Base.Defs;
+using Base.Entities.Abilities;
+using Base.Entities.Statuses;
+using PhoenixPoint.Common.Entities;
 using PhoenixPoint.Tactical.Entities.Equipments;
-using PhoenixPoint.Tactical.Entities.Weapons;
+using PhoenixPoint.Tactical.Entities.Statuses;
 using System.Linq;
-using UnityEngine;
 
 namespace Reaperpointmod
 {
@@ -16,6 +12,11 @@ namespace Reaperpointmod
 
     {
         private static readonly DefRepository Repo = ReaperpointmodMain.Repo;
+        public static void ChangeArmor()
+        {
+            Armorreaperpointmod.ArmorReaper();
+        }
+
         public static void ArmorReaper()
         {
             ReaperpointmodConfig ArmorReaperConfig = ReaperpointmodMain.Main.Config;
@@ -73,7 +74,7 @@ namespace Reaperpointmod
             GoldenHelmetForMagnus.BodyPartAspectDef.Stealth = ArmorReaperConfig.GoldenHelmetAssaultForMagnusStealth;
             GoldenHelmetForMagnus.BodyPartAspectDef.Accuracy = ArmorReaperConfig.GoldenHelmetAssaultForMagnusAccuracy;
 
-            TacticalItemDef GoldenTorsoForMagnus = Armorreaperpointmod.Repo.GetAllDefs<TacticalItemDef>().FirstOrDefault(a => a.name.Equals("PX_Assault_Torso_Gold_BodyPartDef"));
+            TacticalItemDef GoldenTorsoForMagnus = Armorreaperpointmod.Repo.GetAllDefs<TacticalItemDef>().FirstOrDefault(a => a.name.Equals("PX_Assault_Torso_Gold_BodyPartDef")); 
             GoldenTorsoForMagnus.BodyPartAspectDef.Perception = ArmorReaperConfig.GoldenTorsoAssaultForMagnusPerception;
             GoldenTorsoForMagnus.BodyPartAspectDef.Stealth = ArmorReaperConfig.GoldenTorsoAssaultForMagnusStealth;
             GoldenTorsoForMagnus.BodyPartAspectDef.Accuracy = ArmorReaperConfig.GoldenTorsoAssaultForMagnusAccuracy;
@@ -233,16 +234,8 @@ namespace Reaperpointmod
             sonyplaystationlegs.BodyPartAspectDef.Perception = ArmorReaperConfig.WhiteNeonLegsArmorPerception;
             sonyplaystationlegs.BodyPartAspectDef.Stealth = ArmorReaperConfig.WhiteNeonLegsArmorStealth;
             sonyplaystationlegs.BodyPartAspectDef.Accuracy = ArmorReaperConfig.WhiteNeonLegsArmorAccuracy;
-
-
-
-
-
-
-
         }
 
         
-         
-    }  
+    }
 }

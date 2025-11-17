@@ -1,19 +1,11 @@
-﻿using Base.Core;
-using Base.Defs;
-using Base.Levels;
-using PhoenixPoint.Common.Game;
-using PhoenixPoint.Modding;
+﻿using Base.Defs;
 using Code.PhoenixPoint.Tactical.Entities.Equipments;
 using PhoenixPoint.Tactical.Entities.Abilities;
-using PhoenixPoint.Geoscape.Entities.Research;
-using PhoenixPoint.Geoscape.Entities.Research.Cost;
-using PhoenixPoint.Geoscape.Entities.Research.Requirement;
-using PhoenixPoint.Geoscape.Entities.Research.Reward;
-using PhoenixPoint.Tactical.Entities.Statuses;
 using PhoenixPoint.Tactical.Entities.Weapons;
 using System.Linq;
-using UnityEngine;
 using PhoenixPoint.Common.Entities.Equipments;
+using PhoenixPoint.Tactical.Entities.DamageKeywords;
+using PhoenixPoint.Tactical.Entities;
 
 namespace Reaperpointmod
 {
@@ -21,14 +13,21 @@ namespace Reaperpointmod
     {
         private static readonly DefRepository Repo = ReaperpointmodMain.Repo;
 
+        public static void ChangeVehicle()
+        {
+            Vehiclereaperpointmod.VehicleReaper();
+        }
+
         public static void VehicleReaper()
         {
             ReaperpointmodConfig ReaperVehicleConfig = ReaperpointmodMain.Main.Config;
+
 
             GroundVehicleWeaponDef Taurus = Vehiclereaperpointmod.Repo.GetAllDefs<GroundVehicleWeaponDef>().FirstOrDefault(a => a.name.Equals("PX_Scarab_Taurus_GroundVehicleWeaponDef"));
             Taurus.APToUsePerc = ReaperVehicleConfig.TaurusActionPointToUsePerc;
             Taurus.ChargesMax = ReaperVehicleConfig.TaurusChargesMaxAmmo;
             Taurus.DamagePayload.DamageKeywords[0].Value = ReaperVehicleConfig.TaurusDamage;
+            Taurus.DamagePayload.DamageKeywords[1].Value = 30f;
             Taurus.DamagePayload.DamageKeywords[2].Value = ReaperVehicleConfig.TaurusShockDamage;
 
             GroundVehicleWeaponDef Scorpio = Vehiclereaperpointmod.Repo.GetAllDefs<GroundVehicleWeaponDef>().FirstOrDefault(a => a.name.Equals("PX_Scarab_Scorpio_GroundVehicleWeaponDef"));

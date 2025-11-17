@@ -1,20 +1,12 @@
-﻿using Base.Levels;
-using Base.Defs;
+﻿using Base.Defs;
 using Base.Core;
-using PhoenixPoint.Common.Game;
 using PhoenixPoint.Common.Core;
-using PhoenixPoint.Modding;
 using PhoenixPoint.Common.Entities.Characters;
 using System.Linq;
-using UnityEngine;
 using PhoenixPoint.Common.Levels.Missions;
 using PhoenixPoint.Geoscape.Levels;
 using PhoenixPoint.Geoscape.Levels.Factions;
-using PhoenixPoint.Tactical.Entities.Abilities;
-using PhoenixPoint.Tactical.Entities;
-using PhoenixPoint.Geoscape.View.ViewControllers.BaseRecruits;
-using PhoenixPoint.Common.UI;
-using Base;
+using PhoenixPoint.Tactical.Levels.Missions;
 
 namespace Reaperpointmod
 {
@@ -27,7 +19,7 @@ namespace Reaperpointmod
             ReaperpointmodConfig ReaperSquadConfig = ReaperpointmodMain.Main.Config;
 
             LevelProgressionDef LevelReaper = ReaperpointmodSquad.Repo.GetAllDefs<LevelProgressionDef>().FirstOrDefault(a => a.name.Equals("LevelProgressionDef"));
-            LevelReaper.SkillpointsPerLevel = ReaperSquadConfig.SkillPointPerLevelValue * 500;
+            LevelReaper.SkillpointsPerLevel = ReaperSquadConfig.SkillPointPerLevelValue;
 
             BaseStatSheetDef StatsReaper = ReaperpointmodSquad.Repo.GetAllDefs<BaseStatSheetDef>().FirstOrDefault(a => a.name.Equals("HumanSoldier_BaseStatSheetDef"));
             StatsReaper.MaxStrength = ReaperSquadConfig.MaxStrenghtValue;
@@ -51,12 +43,13 @@ namespace Reaperpointmod
             DefRepository RSRepo = GameUtl.GameComponent<DefRepository>();
             foreach (TacMissionTypeDef tac in RSRepo.DefRepositoryDef.AllDefs.OfType<TacMissionTypeDef>().ToList())
             {
-                tac.MaxPlayerUnits = ReaperSquadConfig.MaxPlayerUnitsValue;
+                tac.MaxPlayerUnits = ReaperSquadConfig.MaxPlayerUnitsValue;                
             }
+             
 
             GeoFactionDef AnuRecruit = ReaperpointmodSquad.Repo.GetAllDefs<GeoFactionDef>().FirstOrDefault(a=>a.name.Equals("Anu_GeoFactionDef"));
-            GeoFactionDef NJRecruit = ReaperpointmodSquad.Repo.GetAllDefs<GeoFactionDef>().FirstOrDefault(a => a.name.Equals("NewJericho_GeoFactionDef"));
-            GeoFactionDef SynedRecruit = ReaperpointmodSquad.Repo.GetAllDefs<GeoFactionDef>().FirstOrDefault(a =>a.name.Equals("Synedrion_GeoFactionDef"));
+            GeoFactionDef NJRecruit = ReaperpointmodSquad.Repo.GetAllDefs<GeoFactionDef>().FirstOrDefault(a=>a.name.Equals("NewJericho_GeoFactionDef"));
+            GeoFactionDef SynedRecruit = ReaperpointmodSquad.Repo.GetAllDefs<GeoFactionDef>().FirstOrDefault(a=>a.name.Equals("Synedrion_GeoFactionDef"));
             AnuRecruit.RecruitIntervalCheckDays = ReaperSquadConfig.FactionRecruitDaysInterval;
             NJRecruit.RecruitIntervalCheckDays = ReaperSquadConfig.FactionRecruitDaysInterval;
             SynedRecruit.RecruitIntervalCheckDays = ReaperSquadConfig.FactionRecruitDaysInterval;

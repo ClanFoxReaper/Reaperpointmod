@@ -1,14 +1,7 @@
-﻿using Base.Core;
-using Base.Defs;
-using Base.Levels;
-using PhoenixPoint.Common.Game;
-using PhoenixPoint.Modding;
-using PhoenixPoint.Common.Levels.MapGeneration;
-using PhoenixPoint.Common.Entities.Items;
-using PhoenixPoint.Geoscape.Entities.PhoenixBases;
+﻿using Base.Defs;
 using PhoenixPoint.Geoscape.Entities.PhoenixBases.FacilityComponents;
+using PhoenixPoint.Common.Core;
 using System.Linq;
-using UnityEngine;
 
 namespace Reaperpointmod
 {
@@ -21,41 +14,46 @@ namespace Reaperpointmod
             ReaperpointmodConfig ReaperFacilityConfig = ReaperpointmodMain.Main.Config;
 
             ResourceGeneratorFacilityComponentDef Lab = Facilityreaperpointmod.Repo.GetAllDefs<ResourceGeneratorFacilityComponentDef>().FirstOrDefault(a => a.name.Equals("E_ResourceGenerator [ResearchLab_PhoenixFacilityDef]"));
-            Lab.BaseResourcesOutput[0] = new PhoenixPoint.Common.Core.ResourceUnit
+            Lab.BaseResourcesOutput[0] = new ResourceUnit
             {
-                Type = PhoenixPoint.Common.Core.ResourceType.Research,
+                Type = ResourceType.Research,
                 Value = ReaperFacilityConfig.ResearchLabValue
             };
+            Lab.BaseResourcesOutput.Add(new ResourceUnit(ResourceType.Tech, 1.84f));
 
             ResourceGeneratorFacilityComponentDef Fabrica = Facilityreaperpointmod.Repo.GetAllDefs<ResourceGeneratorFacilityComponentDef>().FirstOrDefault(a => a.name.Equals("E_ResourceGenerator [FabricationPlant_PhoenixFacilityDef]"));
-            Fabrica.BaseResourcesOutput[0] = new PhoenixPoint.Common.Core.ResourceUnit
+            Fabrica.BaseResourcesOutput[0] = new ResourceUnit
             {
-                Type = PhoenixPoint.Common.Core.ResourceType.Production,
+                Type = ResourceType.Production,
                 Value = ReaperFacilityConfig.FabricationPlantValue
             };
+            Fabrica.BaseResourcesOutput.Add(new ResourceUnit(ResourceType.Materials, 1.84f));
 
             ResourceGeneratorFacilityComponentDef Cyber = Facilityreaperpointmod.Repo.GetAllDefs<ResourceGeneratorFacilityComponentDef>().FirstOrDefault(a => a.name.Equals("E_ResourceGenerator [BionicsLab_PhoenixFacilityDef]"));
-            Cyber.BaseResourcesOutput[0] = new PhoenixPoint.Common.Core.ResourceUnit
+            Cyber.BaseResourcesOutput[0] = new ResourceUnit
             {
-                Type = PhoenixPoint.Common.Core.ResourceType.Research,
+                Type = ResourceType.Research,
                 Value = ReaperFacilityConfig.CyberLabValue
             };
+            Cyber.BaseResourcesOutput.Add(new ResourceUnit(ResourceType.Materials, 17.15f));
+            Cyber.BaseResourcesOutput.Add(new ResourceUnit(ResourceType.Tech, 6.78f));
 
             ResourceGeneratorFacilityComponentDef FoodMaterialsTech = Facilityreaperpointmod.Repo.GetAllDefs<ResourceGeneratorFacilityComponentDef>().FirstOrDefault(a => a.name.Equals("E_ResourceGenerator [FoodProduction_PhoenixFacilityDef]"));
-            FoodMaterialsTech.BaseResourcesOutput[0] = new PhoenixPoint.Common.Core.ResourceUnit
+            FoodMaterialsTech.BaseResourcesOutput[0] = new ResourceUnit
             {
-                Type = PhoenixPoint.Common.Core.ResourceType.Supplies,
+                Type = ResourceType.Supplies,
                 Value = ReaperFacilityConfig.FoodProdValue
             };
-            FoodMaterialsTech.BaseResourcesOutput.Add(new PhoenixPoint.Common.Core.ResourceUnit(PhoenixPoint.Common.Core.ResourceType.Materials, ReaperFacilityConfig.FoodProdValue));
-            FoodMaterialsTech.BaseResourcesOutput.Add(new PhoenixPoint.Common.Core.ResourceUnit(PhoenixPoint.Common.Core.ResourceType.Tech, ReaperFacilityConfig.FoodProdValue));
+            FoodMaterialsTech.BaseResourcesOutput.Add(new ResourceUnit(ResourceType.Materials, 17.15f));
+            FoodMaterialsTech.BaseResourcesOutput.Add(new ResourceUnit(ResourceType.Tech, 6.78f));
 
             ResourceGeneratorFacilityComponentDef Mutagen = Facilityreaperpointmod.Repo.GetAllDefs<ResourceGeneratorFacilityComponentDef>().FirstOrDefault(a => a.name.Equals("E_ResourceGenerator [MutationLab_PhoenixFacilityDef]"));
-            Mutagen.BaseResourcesOutput[0] = new PhoenixPoint.Common.Core.ResourceUnit
+            Mutagen.BaseResourcesOutput[0] = new ResourceUnit
             {
-                Type = PhoenixPoint.Common.Core.ResourceType.Mutagen,
+                Type = ResourceType.Mutagen,
                 Value = ReaperFacilityConfig.MutagenProdValue
             };
+            Mutagen.BaseResourcesOutput.Add(new ResourceUnit(ResourceType.Supplies, 3.08f));
 
             ContainerFacilityComponentDef LivingQuarters = Facilityreaperpointmod.Repo.GetAllDefs<ContainerFacilityComponentDef>().FirstOrDefault(a => a.name.Equals("E_Container [LivingQuarters_PhoenixFacilityDef]"));
             LivingQuarters.SoldiersCapacity = ReaperFacilityConfig.SoldiersCapacityAmount;
